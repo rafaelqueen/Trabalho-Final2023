@@ -1,0 +1,36 @@
+# View e relatório
+
+CREATE VIEW reservas AS
+SELECT
+    pessoa.id AS '#',
+    pessoa.nome_completo AS 'Nome completo',
+    DATE_FORMAT(pessoa.data_nascimento, '%d/%m/%Y') AS 'Data nascimento',
+    pessoa.documento AS 'Documento de Registro',
+    pessoa.cidade AS 'Cidade',
+    pessoa.estado AS 'Estado',
+    pessoa.pais AS 'País',
+    cliente.fidelidade AS 'Fidelidade',
+   count(reserva.id_cliente) AS 'Quantidade de reservas',
+    CASE
+        WHEN MAX(reserva.data_inicio) > CURRENT_DATE THEN 'Sim'
+        ELSE 'Não'
+    END AS 'Tem Reserva Futura',
+    sum(reserva.valor_total) AS 'Valor total gasto'
+FROM
+    pessoa
+JOIN
+    cliente ON pessoa.id = cliente.id_pessoa
+    join reserva on reserva.id_cliente =  cliente.id 
+    group by  pessoa.id,
+    pessoa.nome_completo ,
+    pessoa.data_nascimento ,
+    pessoa.documento ,
+    pessoa.cidade ,
+    pessoa.estado ,
+    pessoa.pais,
+    cliente.fidelidade;
+    
+select * from view_dados_clientes;
+    
+select * from reservas;
+ 

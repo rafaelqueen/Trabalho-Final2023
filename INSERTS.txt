@@ -1,0 +1,154 @@
+INSERT INTO pessoa (id, nome_completo, data_nascimento, documento, pais, estado, cidade)
+VALUES
+(1, 'João da Silva', '1990-05-15', '123456789', 'Brasil', 'SC', 'Chapecó'),
+(2, 'Maria Oliveira', '1985-08-22', '987654321', 'Brasil', 'PR', 'Maringá'),
+(3, 'Pedro Santos', '1995-02-10', '567890123', 'Brasil', 'SC', 'Brusque'),
+(4, 'Ana Costa', '1988-11-05', '654321098', 'Brasil', 'BA', 'Salvador'),
+(5, 'Carlos Pereira', '1980-09-30', '789012345', 'Brasil', 'RS', 'Bagé'),
+(6, 'Fernanda Lima', '1992-04-18', '456789012', 'Brasil', 'SC', 'Florianópolis'),
+(7, 'Ricardo Oliveira', '1983-07-12', '890123456', 'Brasil', 'SP', 'Campinas'),
+(8, 'Camila Souza', '1991-01-25', '345678901', 'Brasil', 'PR', 'Curitiba'),
+(9, 'Lucas Silva', '1987-06-08', '012345678', 'Brasil', 'RJ', 'Niterói'),
+(10, 'Juliana Santos', '1993-09-03', '901234567', 'Brasil', 'SC', 'Itajaí'),
+(11, 'Gabriel Pereira', '1986-11-20', '234567890', 'Brasil', 'SP', 'Santos'),
+(12, 'Patrícia Costa', '1990-03-28', '789012345', 'Brasil', 'SC', 'Lages'),
+(13, 'Daniel Oliveira', '1984-12-15', '345678901', 'Brasil', 'RS', 'Caxias'),
+(14, 'Mariana Lima', '1989-02-10', '567890123', 'Brasil', 'RS', 'Erechim'),
+(15, 'Eduardo Souza', '1995-07-01', '012345678', 'Brasil', 'PR', 'Londrina');
+(16, 'Amanda Silva', '1994-08-12', '345678912', 'Brasil', 'SC', 'Joinville'),
+(17, 'Vinícius Oliveira', '1989-03-25', '567890234', 'Brasil', 'PR', 'Londrina'),
+(18, 'Roberta Santos', '1992-06-30', '789012345', 'Brasil', 'SC', 'Itapema'),
+(19, 'Rafael Costa', '1987-10-05', '901234567', 'Brasil', 'SP', 'São Paulo'),
+(20, 'Carolina Pereira', '1991-01-18', '123456789', 'Brasil', 'RS', 'Porto Alegre'),
+(21, 'Luciano Lima', '1985-04-22', '234567890', 'Brasil', 'SC', 'Blumenau'),
+(22, 'Aline Oliveira', '1996-09-07', '456789012', 'Brasil', 'PR', 'Curitiba'),
+(23, 'Bruno Souza', '1980-12-14', '678901234', 'Brasil', 'RJ', 'Rio de Janeiro'),
+(24, 'Isabela Santos', '1993-02-28', '890123456', 'Brasil', 'SP', 'Campinas'),
+(25, 'Fábio Costa', '1984-11-15', '012345678', 'Brasil', 'RS', 'Canoas'),
+(26, 'Natália Pereira', '1988-07-10', '123456789', 'Brasil', 'SC', 'Florianópolis'),
+(27, 'José Oliveira', '1995-04-03', '234567890', 'Brasil', 'PR', 'Maringá'),
+(28, 'Renata Lima', '1983-10-20', '345678901', 'Brasil', 'SC', 'Joinville'),
+(29, 'Marcelo Silva', '1990-03-08', '567890123', 'Brasil', 'RS', 'Novo Hamburgo'),
+(30, 'Tatiane Souza', '1986-06-01', '789012345', 'Brasil', 'PR', 'Londrina');
+
+
+INSERT INTO acomodacao (id, nome, valor_diaria, limite_hospedes, descricao)
+VALUES
+(1, 'Quarto Standard', 120, 2, 'Quarto simples com cama de casal.'),
+(2, 'Suíte Executiva', 250, 4, 'Suíte espaçosa com sala de estar e vista panorâmica.'),
+(3, 'Cabana Familiar', 300, 6, 'Cabana ideal para famílias com área de lazer privativa.'),
+(4, 'Apartamento Luxo', 200, 3, 'Apartamento elegante com amenities de luxo.'),
+(5, 'Chalé Romântico', 180, 2, 'Chalé aconchegante para casais em busca de romance.'),
+(6, 'Villa Familiar', 400, 7, 'Villa com piscina privativa e espaço amplo para a família.'),
+(7, 'Bangalô de Luxo', 280, 4, 'Bangalô com vista para o mar e serviços exclusivos.'),
+(8, 'Quarto Duplo', 150, 2, 'Quarto com duas camas de solteiro.'),
+(9, 'Suíte Presidencial', 500, 8, 'Suíte luxuosa com todas as comodidades.'),
+(10, 'Apto. Panorâmico', 300, 5, 'Apartamento com varanda panorâmica e decoração moderna.');
+
+INSERT INTO pacote (id, id_acomodacao, nome, qtd_diarias, valor_total)
+VALUES
+(1, 2, 'Pacote Executivo', 3, 750),
+(2, 5, 'Pacote Romântico', 2, 360),
+(3, 7, 'Pacote de Luxo', 4, 1120),
+(4, 3, 'Pacote Familiar', 5, 1500),
+(5, 9, 'Pacote VIP', 7, 3500);
+
+INSERT INTO midia_acomodacao (id, id_acomodacao, tipo, nome)
+VALUES
+
+(1, 2, 'Imagem', 'suite_executiva.jpg'),
+(2, 5, 'Imagem', 'chale_romântico.jpg'),
+(3, 7, 'Imagem', 'bangalo_luxo_piscina.jpg'),
+(4, 3, 'Imagem', 'cabana_familiar_patio.jpg'),
+(5, 9, 'Imagem', 'suite_presidencial_bedroom.jpg');
+
+INSERT INTO cliente (id, id_pessoa, fidelidade, observacao)
+VALUES
+(1, 1, '1', 'Cliente VIP'),
+(2, 2, '0', Sem Fidelidade),
+(3, 3, '1', 'Cliente corporativo'),
+(4, 4, '0', Sem Fidelidade),
+(5, 5, '1', 'Cliente preferencial'),
+(6, 6, '0', Sem Fidelidade),
+(7, 7, '1', 'Cliente antigo'),
+(8, 8, '0', Sem Fidelidade),
+(9, 9, '1', 'Cliente VIP'),
+(10, 10, '0', Sem Fidelidade),
+(11, 11, '1', 'Cliente corporativo'),
+(12, 12, '0', Sem Fidelidade),
+(13, 13, '1', 'Cliente preferencial'),
+(14, 14, '0', Sem Fidelidade),
+(15, 15, '1', 'Cliente antigo');
+
+INSERT INTO funcionarios (id, id_pessoa, cargo, salario)
+VALUES
+(1, 16, 'Camareira', 2500),
+(2, 17, 'Garçom', 4000),
+(3, 18, 'Garçom', 3200),
+(4, 19, 'Chefe de Cozinha', 6000),
+(5, 20, 'Recepcionista', 4000),
+(6, 21, 'Chefe de Cozinha', 7500),
+(7, 22, 'Recepcionista', 3000),
+(8, 23, 'Camareira', 2500),
+(9, 24, 'Garçom', 3000),
+(10, 25, 'Recepcionista', 5000),
+(11, 26, 'Camareira', 3500),
+(12, 27, 'Garçom', 4000);
+
+INSERT INTO reserva (id, id_acomodacao, id_cliente, data_inicio, data_fim, valor_total)
+VALUES
+
+(1, 2, 2, '2023-12-10', '2023-12-15', 500),
+(2, 5, 3, '2023-12-25', '2023-12-30', 900),
+(3, 7, 15, '2023-12-02', '2023-12-07', 800),
+(4, 3, 5, '2023-2-08', '2023-2-13', 1200),
+(5, 9, 1, '2023-07-20', '2023-7-25', 1500),
+(6, 1, 7, '2023-12-05', '2023-12-10', 700),
+(7, 3, 8, '2023-12-15', '2023-12-20', 1000),
+(8, 4, 9, '2023-12-22', '2023-12-27', 1300),
+(9, 10, 10, '2023-10-28', '2024-10-02', 1800),
+(10, 2, 4, '2023-3-05', '2023-3-10', 550),
+(11, 10, 9, '2023-11-30', '2023-12-05', 4600),
+(12, 5, 3, '2023-4-25', '2023-5-30', 900),
+(13, 7, 1, '2023-12-02', '2023-12-07', 800),
+(14, 3, 5, '2023-6-08', '2023-6-13', 1200),
+(15, 9, 9, '2023-7-20', '2023-7-25', 1500);
+
+
+CREATE VIEW view_dados_clientes AS
+SELECT
+    pessoa.id AS '#',
+    pessoa.nome_completo AS 'Nome completo',
+    pessoa.data_nascimento AS 'Data nascimento',
+    pessoa.documento AS 'Documento de Registro',
+    pessoa.cidade,
+    pessoa.estado,
+    pessoa.pais,
+    cliente.fidelidade
+FROM
+    pessoa
+JOIN
+    cliente ON pessoa.id = cliente.id_pessoa;
+
+Esta view, chamada view_dados_clientes, une a tabela pessoa com a tabela cliente utilizando o ID da pessoa e
+ inclui as colunas solicitadas na ordem especificada.
+
+Lembre-se de substituir pessoa e cliente pelos nomes reais das suas tabelas. Certifique-se de que as tabelas e
+ colunas utilizadas estejam corretas antes de executar o comando.
+
+
+SELECT
+    view_dados_clientes.*,
+    COALESCE(COUNT(reserva.id), 0) AS 'Quantidade de Reservas',
+    CASE
+        WHEN MAX(reserva.data_inicio) > CURRENT_DATE THEN 'Sim'
+        ELSE 'Não'
+    END AS 'Tem Reserva Futura',
+    COALESCE(SUM(reserva.valor_total), 0) AS 'Valor Total em Reservas'
+FROM
+    view_dados_clientes
+LEFT JOIN
+    reserva ON view_dados_clientes.# = reserva.id_cliente
+GROUP BY
+    view_dados_clientes.#, view_dados_clientes.'Nome completo', view_dados_clientes.'Data nascimento', view_dados_clientes.'Documento de Registro', view_dados_clientes.'Cidade', view_dados_clientes.'Estado', view_dados_clientes.'País', view_dados_clientes.'Fidelidade';
+
